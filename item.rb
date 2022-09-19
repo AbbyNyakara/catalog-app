@@ -1,8 +1,9 @@
 require 'securerandom'
 
 class Item
-  attr_accessor :genre, :author, :source, :label, :publish_date
-  def initialize(id: SecureRandom.hex(5), genre, author, source, label, publish_date, archived: false)
+  attr_accessor :genre, :author, :source, :label
+  attr_reader :books
+  def initialize(publish_date, id: SecureRandom.hex(5), archived: false)
 
     @id = id
     @genre = genre
@@ -11,19 +12,28 @@ class Item
     @label = label
     @publish_date = publish_date
     @archived = archived
+    @books = []
   end
 
   def move_to_archive
     if can_be_archived?
-      self.archived = true
+      @archived = true
     end
+  end
+
+  def add_book(book)
+    @books << book
   end
 
   private
 
   def can_be_archived?
-    self.publish_date > 10 ? true : false
+    @publish_date > 10 ? true : false
   end
 
-
 end
+
+
+
+
+

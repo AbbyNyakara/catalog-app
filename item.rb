@@ -3,8 +3,8 @@ require 'securerandom'
 class Item
   attr_accessor :genre, :author, :source, :label
   attr_reader :books
-  def initialize(publish_date, id: SecureRandom.hex(5), archived: false)
 
+  def initialize(publish_date, id: SecureRandom.hex(5), archived: false)
     @id = id
     @genre = genre
     @author = author
@@ -30,10 +30,4 @@ class Item
   def can_be_archived?
     @publish_date > 10 ? true : false
   end
-
 end
-
-
-
-
-

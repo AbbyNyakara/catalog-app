@@ -4,15 +4,11 @@ require 'securerandom'
 class Book < Item
   attr_reader :cover_state, :publisher, :archived
 
-  def initialize(publisher, cover_state, publish_date, id: SecureRandom.hex(5))
+  def initialize(publisher, cover_state, publish_date)
     super(publish_date)
     @publisher = publisher
     @cover_state = cover_state
-    @id = id
-  end
-
-  def mimi
-    can_be_archived?
+    @id = SecureRandom.hex(5)
   end
 
   private

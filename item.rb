@@ -13,11 +13,6 @@ class Item
   def move_to_archive
     self.archived = true if can_be_archived?
     self.archived = false unless can_be_archived?
-    # if can_be_archived? == true
-    #   self.archived = true
-    # else
-    #   self.archived = false
-    # end
   end
 
   def author=(author)

@@ -4,8 +4,8 @@ require 'date'
 class Item
   attr_accessor :publish_date, :archived
 
-  def initialize(publish_date, id: SecureRandom.hex(5), archived: false)
-    @id = id
+  def initialize(publish_date, archived: false)
+    @id = SecureRandom.hex(5)
     @publish_date = publish_date
     @archived = archived
   end

@@ -1,6 +1,7 @@
 require 'securerandom'
+require './item'
 
-class Author
+class Author < Item
   attr_accessor :first_name, :last_name, :items, :id
 
   def initialize(first_name, last_name)

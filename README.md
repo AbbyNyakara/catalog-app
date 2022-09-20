@@ -1,14 +1,16 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 # Project Name
+CATALOG APP
 
 > Description the project.
+A console app that helps one to keep track of the own things they own such as movie, music albums, games, books
 
 
 ## Built With
 
-- Major languages
-- Frameworks
+- Ruby
+- RSpec
 - Technologies used
 
 ## Live Demo (if available)
@@ -25,32 +27,50 @@
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
+Basic knowlwedge of computers, git and an editor most prefarably visual studio code
 
 ### Setup
+Navigate to the directory in your local computer where you want this project to be.
+Once inside open the terminal in that directory and clone the project
+Run git clone(https://github.com/AbbyNyakara/catalog-app.git)
 
 ### Install
-
+When the clone is complete change the current working directory to the catalog app
+Run cd catalog-app
+Then open it VsCode by running ==> code .
 ### Usage
 
 ### Run tests
 
 ### Deployment
-
+Once you create the file for the tests with the _spec.rb extension, jusr run rspec to run the tests
 
 
 ## Authors
 
-👤 **Author1**
+👤 **Abby**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@AbbyNyakara](https://github.com/AbbyNyakara)
+- Twitter: [@AbigaelNyakara](https://twitter.com/AbbyNyakara)
+- LinkedIn: [Abigael Nyakara](https://linkedin.com/in/AbbyNyakara)
 
-👤 **Author2**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+👤 **Elisha Tetteyfio**
+
+- GitHub: [@elisha-tetteyfio](https://github.com/elisha-tetteyfio)
+- Twitter: [@twitterhandle](https://twitter.com/Nii_AlYasa)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/elisha-tetteyfio)
+
+👤 **Alphonce**
+- Github: [@tingamapuro04](https://github.com/tingamapuro04)
+- LinkedIn: [@adoyo-alphonce](https://www.linkedin.com/in/adoyo-alphonce/)
+
+👤 **Afolabi Akorede**
+
+- GitHub: [@brainconnect93](https://github.com/brainconnect93)
+- Twitter: [@brainconnect0](https://twitter.com/brainconnect0)
+- LinkedIn: [Afolabi Akorede](https://linkedin.com/in/brainconnect93)
+
 
 ## 🤝 Contributing
 

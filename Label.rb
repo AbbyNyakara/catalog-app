@@ -1,7 +1,7 @@
 require 'securerandom'
 require 'items'
 
-class Label
+class Label < Item
   attr_accesor :items, :color, :title
   def initialize(id: SecureRandom.hex(5), title, color, items: [])
     @id = id

@@ -1,17 +1,17 @@
 require './item'
 
 class Music < item
-    attr_accessor :on_spotify, :publish_date
+  attr_accessor :on_spotify, :publish_date
 
-    def initialize(on_spotify, publish_date)
-        super(publish_date)
-        @on_spotify = on_spotify
-    end
+  def initialize(on_spotify, publish_date)
+    super(publish_date)
+    @on_spotify = on_spotify
+  end
 
-    def can_be_archived?()
-        parent = super()
-        return true if parent || @on_spotify
+  def can_be_archived?()
+    parent = super()
+    return true if parent || @on_spotify
 
-        false
-    end
+    false
+  end
 end

@@ -1,33 +1,45 @@
 require 'securerandom'
+require 'date'
 
 class Item
-  attr_accessor :genre, :author, :source, :label
-  attr_reader :books
+  attr_accessor :genre, :author, :source, :label, :publish_date, :archived
 
   def initialize(publish_date, id: SecureRandom.hex(5), archived: false)
     @id = id
-    @genre = genre
-    @author = author
-    @source = source
-    @label = label
     @publish_date = publish_date
     @archived = archived
-    @books = []
   end
 
   def move_to_archive
-    if can_be_archived?
-      @archived = true
+    if can_be_archived? == true
+      self.archived = true
+    else
+      self.archived = false
     end
   end
 
-  def add_book(book)
-    @books << book
+  def author=(author)
+    @author = author
+    author.items << self
+  end
+
+  def genre=(genre)
+    @genre = genre
+    genre.items << self
+  end
+
+  def source=(source)
+    @source = source
+    source.items << self
+  end
+
+  def label=(label)
+    @label.items << self
   end
 
   private
 
   def can_be_archived?
-    @publish_date > 10 ? true : false
+    return Date.strptime(@publish_date, '%Y-%m-%d') < DateTime.now.prev_year(10)
   end
 end

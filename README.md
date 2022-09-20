@@ -65,6 +65,12 @@ Once you create the file for the tests with the _spec.rb extension, jusr run rsp
 - Github: [@tingamapuro04](https://github.com/tingamapuro04)
 - LinkedIn: [@adoyo-alphonce](https://www.linkedin.com/in/adoyo-alphonce/)
 
+👤 **Afolabi Akorede**
+
+- GitHub: [@brainconnect93](https://github.com/brainconnect93)
+- Twitter: [@brainconnect0](https://twitter.com/brainconnect0)
+- LinkedIn: [Afolabi Akorede](https://linkedin.com/in/brainconnect93)
+
 
 ## 🤝 Contributing
 

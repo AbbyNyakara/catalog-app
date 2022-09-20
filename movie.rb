@@ -10,7 +10,7 @@ class Movie < Item
 
   def can_be_archived?
     parent = super()
-    return true if parent || silent
+    return true if parent || @silent
 
     false
   end

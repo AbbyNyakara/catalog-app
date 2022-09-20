@@ -2,10 +2,10 @@ require 'securerandom'
 
 class Source
   attr_accessor :name
-  
+
   def initialize(name)
     @id = SecureRandom.hex(5)
-    @name
+    @name = name
     @items = []
   end
 

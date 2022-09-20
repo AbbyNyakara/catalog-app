@@ -13,7 +13,8 @@ class Label < Item
     @items = []
   end
 
-  def add_items
-    @items << Item.new
+  def add_items(item)
+    @items << item
+    item.label = self
   end
 end

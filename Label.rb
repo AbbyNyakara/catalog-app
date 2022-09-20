@@ -5,12 +5,12 @@ class Label < Item
   attr_accessor :items, :color, :title
   attr_reader :id
 
-  def initialize(title, color, items: [])
+  def initialize(title, color)
     super
     @id = SecureRandom.hex(5)
     @title = title
     @color = color
-    @items = items
+    @items = []
   end
 
   def add_items

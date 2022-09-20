@@ -4,11 +4,11 @@ require './item'
 class Genre < Item
   attr_accessor :id, :name, :items
 
-  def initialize(name, items: [])
+  def initialize(name)
     super
     @id = SecureRandom.hex(5)
     @name = name
-    @items = items
+    @items = []
   end
 
   def add_items

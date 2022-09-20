@@ -1,16 +1,17 @@
-require 'securerandom';
-require './item';
+require 'securerandom'
+require './item'
 
 class Genre < Item
-  attr_accesor :id, :name, :items
-  
-  def initialize(id: SecureRandom.hex(5), name, items: [])
-    @id = id
+  attr_accessor :id, :name, :items
+
+  def initialize(name, items: [])
+    super
+    @id = SecureRandom.hex(5)
     @name = name
     @items = items
   end
 
   def add_items
-    @items << Item.new()
+    @items << Item.new
   end
 end

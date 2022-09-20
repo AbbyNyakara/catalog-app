@@ -2,7 +2,7 @@ require 'securerandom'
 require 'date'
 
 class Item
-  attr_accessor :genre, :author, :source, :label, :publish_date, :archived
+  attr_accessor :publish_date, :archived
 
   def initialize(publish_date, id: SecureRandom.hex(5), archived: false)
     @id = id
@@ -11,11 +11,13 @@ class Item
   end
 
   def move_to_archive
-    if can_be_archived?
-      self.archived = true
-    else
-      self.archived = false
-    end
+    self.archived = true if can_be_archived?
+    self.archived = false unless can_be_archived?
+    # if can_be_archived? == true
+    #   self.archived = true
+    # else
+    #   self.archived = false
+    # end
   end
 
   def author=(author)
@@ -34,12 +36,13 @@ class Item
   end
 
   def label=(label)
+    @label = label
     @label.items << self
   end
 
   private
 
   def can_be_archived?
-    return Date.strptime(@publish_date, '%Y-%m-%d') < DateTime.now.prev_year(10)
+    Date.strptime(@publish_date, '%Y-%m-%d') < DateTime.now.prev_year(10)
   end
 end

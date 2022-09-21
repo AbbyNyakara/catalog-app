@@ -1,6 +1,7 @@
 require './book'
 require './music'
 require './movie'
+require './game'
 require 'json'
 
 class App
@@ -88,8 +89,32 @@ class App
     end
   end
 
+  def add_game
+    all_games = []
+    File.open('./data/game.json', 'r') do |file|
+      b1 = JSON.parse(file.read)
+      b1.each { |game| all_games << game }
+    end
+
+    print "Publish date: "
+    publish_date = gets.chomp
+    print "Enter multiplayer: "
+    multiplayer = gets.chomp
+    print "Last played on date?: "
+    last_played_at = gets.chomp
+    
+
+    new_game = Game.new(publish_date, multiplayer, last_played_at)
+    
+    File.open('./data/game.json', 'w+') do |file|
+      all_games << {Publish_date: new_game.publish_date, multiplayer: new_game.multiplayer, last_played_at: new_game.last_played_at}
+      ss = JSON.dump(all_games)
+      file.write(ss)
+    end
+  end
+
 
 end
 
 aa=App.new
-aa.add_movie
+aa.add_game

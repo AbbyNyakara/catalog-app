@@ -8,6 +8,7 @@ require './source'
 require './label'
 require './data1'
 
+# rubocop: disable Metrics/ClassLength
 class Interface
   attr_accessor :genres, :sources, :labels, :authors, :books, :movies,
                 :music_albums, :games
@@ -36,8 +37,6 @@ class Interface
     last_name = gets.chomp
     print 'Enter the genre of the book: '
     genre = gets.chomp
-    print 'Enter the source of the book: '
-    source = gets.chomp
     print 'Enter the publisher of the book: '
     publisher = gets.chomp
     print 'Enter the cover state of the book(string): '
@@ -48,7 +47,6 @@ class Interface
     books << Book.new(publisher, cover_state, date)
     authors << Author.new(first_name, last_name)
     genres << Genre.new(genre)
-    sources << Source.new(source)
     labels << Label.new(title, color)
     puts "Book created successfully\n \n"
   end
@@ -59,8 +57,6 @@ class Interface
       p "#{ind + 1} Publisher: #{book.publisher} cover_state: #{book.cover_state}"
     end
   end
-
-  
 
   def add_game
     print 'Enter the multiplayer: '
@@ -90,14 +86,11 @@ class Interface
     silent_choice = gets.chomp
     silent = true if %w[Y y].include?(silent_choice)
     silent = false if %w[N n].include?(silent_choice)
-    print 'Select the genre of the movie: '
-    genre = gets.chomp
     print 'Give the source of the movie: '
     source = gets.chomp
     puts "Movie created successfully\n \n"
 
     movies << Movie.new(publish_date, silent)
-    genres << Genre.new(genre)
     sources << Source.new(source)
   end
 
@@ -162,17 +155,8 @@ class Interface
 
   def dispaly_options
     options = %w[
-      add_book
-      add_game
-      add_movie
-      add_album
-      list_books
-      list_games
-      list_movies
-      list_albums
-      list_genres
-      list_authors
-      list_sources
+      add_book add_game add_movie add_album list_books
+      list_games list_movies list_albums list_genres list_authors list_sources
       list_labels
       exit
     ]
@@ -186,6 +170,8 @@ class Interface
     @exit = true
   end
 
+  # rubocop: disable Metrics/CyclomaticComplexity
+  # rubocop: disable Metrics/PerceivedComplexity
   def execute(choice)
     return add_book if choice == 1
     return add_game if choice == 2
@@ -203,6 +189,8 @@ class Interface
 
     p 'Invalid choice'
   end
+  # rubocop: enable Metrics/PerceivedComplexity
+  # rubocop: enable Metrics/CyclomaticComplexity
 
   def final
     retrieve_data(self)
@@ -213,6 +201,8 @@ class Interface
     save_data(self)
   end
 end
+
+# rubocop: enable Metrics/ClassLength
 
 mimi = Interface.new
 mimi.final

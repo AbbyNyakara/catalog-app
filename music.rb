@@ -16,6 +16,7 @@ class MusicAlbum < Item
   end
 
   private
+
   def can_be_archived?()
     parent = super()
     return true if parent || @on_spotify

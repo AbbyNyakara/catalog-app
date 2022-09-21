@@ -11,7 +11,7 @@ class Book < Item
     @id = SecureRandom.hex(5)
   end
 
-  private
+  # private
 
   def can_be_archived?
     if @cover_state == 'bad' || super

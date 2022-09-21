@@ -1,11 +1,9 @@
 require 'securerandom'
-require './item'
 
 class Genre
   attr_accessor :id, :name, :items
 
   def initialize(name)
-    super
     @id = SecureRandom.hex(5)
     @name = name
     @items = []

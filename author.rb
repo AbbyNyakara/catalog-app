@@ -10,6 +10,14 @@ class Author
     @items = []
   end
 
+  def to_json(*_args)
+    "{
+      \"id\": \"#{id}\",
+      \"firts_name\": \"#{first_name}\",
+      \"last_name\": \"#{last_name}\"
+    }"
+  end
+
   def add_item(item)
     @items.push(item)
     item.author = self

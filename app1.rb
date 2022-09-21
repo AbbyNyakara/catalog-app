@@ -54,6 +54,7 @@ class Interface
   # rubocop:enable Metrics/MethodLength
 
   def list_books
+    puts 'No books yet here!' if @books.empty?
     @books.each_with_index do |book, ind|
       p "#{ind + 1} Publisher: #{book.publisher} cover_state: #{book.cover_state}"
     end
@@ -75,6 +76,7 @@ class Interface
   end
 
   def list_games
+    puts 'No games yet here!' if @games.empty?
     @games.each_with_index do |game, ind|
       p "#{ind + 1} Multiplayer: #{game.multiplayer} last_played_at: #{game.last_played_at}"
     end
@@ -96,6 +98,7 @@ class Interface
   end
 
   def list_movies
+    puts 'No movies yet here!' if @movies.empty?
     @movies.each_with_index do |movie, ind|
       p "#{ind + 1} Silent: #{movie.silent} Publish_date: #{movie.publish_date}"
     end
@@ -125,30 +128,35 @@ class Interface
   end
 
   def list_albums
+    puts 'No album uploaded yet!' if @music_albums.empty?
     @music_albums.each_with_index do |album, ind|
       p "#{ind + 1} On_spotify: #{album.on_spotify} Publish_date: #{album.publish_date}"
     end
   end
 
   def list_genres
+    puts 'No genres yet here!' if @genres.empty?
     @genres.each_with_index do |genre, ind|
       p "#{ind + 1} Id: #{genre.id} name: #{genre.name}"
     end
   end
 
   def list_authors
+    puts 'No authors yet here!' if @authors.empty?
     @authors.each_with_index do |author, ind|
       p "#{ind + 1} first_name: #{author.first_name} last_name: #{author.last_name}"
     end
   end
 
   def list_sources
+    puts 'No sources yet here!' if @sources.empty?
     @sources.each_with_index do |source, ind|
       p "#{ind + 1} Id: #{source.id} name: #{source.name}"
     end
   end
 
   def list_labels
+    puts 'No labels yet here!' if @labels.empty?
     @labels.each_with_index do |label, ind|
       p "#{ind + 1} title: #{label.title} color: #{label.color}"
     end

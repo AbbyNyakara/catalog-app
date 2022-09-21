@@ -23,8 +23,8 @@ def retrieve_albums(music_albums)
   data.each do |album|
     music_albums << MusicAlbum.new(album['on_spotify'], album['publish_date'])
   end
-rescue Errno::ENOENT
-  puts 'No music album yet!'
+  # rescue Errno::ENOENT
+  # puts 'No music album yet!'
 end
 
 def retrieve_games(games)

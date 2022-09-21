@@ -9,6 +9,13 @@ class Source
     @items = []
   end
 
+  def to_json(*_args)
+    "{
+      \"id\": \"#{id}\",
+      \"name\": \"#{name}\"
+    }"
+  end
+
   def add_item(item)
     @items << item
     item.source = self

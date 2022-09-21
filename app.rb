@@ -1,5 +1,6 @@
 require './book'
 require './music'
+require './movie'
 require 'json'
 
 class App
@@ -63,7 +64,32 @@ class App
       file.write(ss)
     end
   end
+
+  def add_movie
+    all_movies = []
+    File.open('./data/movie.json', 'r') do |file|
+      b1 = JSON.parse(file.read)
+      b1.each { |book| all_movies << book }
+    end
+
+    puts "Publish date: "
+    publish_date = gets.chomp
+    puts "Silent or not: "
+    silent_choice = gets.chomp
+    silent = true if %w[Y y].include?(silent_choice)
+    silent = false if %w[N n].include?(silent_choice)
+
+    new_movie = Movie.new(publish_date, silent)
+    
+    File.open('./data/movie.json', 'w+') do |file|
+      all_movies << {Publish_date: new_movie.publish_date, silent: new_movie.silent}
+      ss = JSON.dump(all_movies)
+      file.write(ss)
+    end
+  end
+
+
 end
 
 aa=App.new
-aa.add_music_album
+aa.add_movie

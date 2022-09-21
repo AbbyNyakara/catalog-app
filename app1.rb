@@ -41,11 +41,11 @@ class Interface
     print 'Enter the publisher of the book: '
     publisher = gets.chomp
     print 'Enter the cover state of the book(string): '
-    cover = gets.chomp
+    cover_state = gets.chomp
     print 'Enter the date the book was published: '
     date = gets.chomp
 
-    books << Book.new(publisher, cover, date)
+    books << Book.new(publisher, cover_state, date)
     authors << Author.new(first_name, last_name)
     genres << Genre.new(genre)
     sources << Source.new(source)
@@ -55,10 +55,12 @@ class Interface
   # rubocop:enable Metrics/MethodLength
 
   def list_books
-    @books.each do |book|
-      p book.to_s
+    @books.each_with_index do |book, ind|
+      p "#{ind + 1} Publisher: #{book.publisher} cover_state: #{book.cover_state}"
     end
   end
+
+  
 
   def add_game
     print 'Enter the multiplayer: '
@@ -73,6 +75,12 @@ class Interface
 
     games << Game.new(multiplayer, last_played, publish_date)
     sources << Source.new(source_name)
+  end
+
+  def list_games
+    @games.each_with_index do |game, ind|
+      p "#{ind + 1} Multiplayer: #{game.multiplayer} last_played_at: #{game.last_played_at}"
+    end
   end
 
   def add_movie
@@ -91,6 +99,12 @@ class Interface
     movies << Movie.new(publish_date, silent)
     genres << Genre.new(genre)
     sources << Source.new(source)
+  end
+
+  def list_movies
+    @movies.each_with_index do |movie, ind|
+      p "#{ind + 1} Silent: #{movie.silent} Publish_date: #{movie.publish_date}"
+    end
   end
 
   def add_music_album
@@ -116,6 +130,36 @@ class Interface
     genres << Genre.new(genre)
   end
 
+  def list_albums
+    @music_albums.each_with_index do |album, ind|
+      p "#{ind + 1} On_spotify: #{album.on_spotify} Publish_date: #{album.publish_date}"
+    end
+  end
+
+  def list_genres
+    @genres.each_with_index do |genre, ind|
+      p "#{ind + 1} Id: #{genre.id} name: #{genre.name}"
+    end
+  end
+
+  def list_authors
+    @authors.each_with_index do |author, ind|
+      p "#{ind + 1} first_name: #{author.first_name} last_name: #{author.last_name}"
+    end
+  end
+
+  def list_sources
+    @sources.each_with_index do |source, ind|
+      p "#{ind + 1} Id: #{source.id} name: #{source.name}"
+    end
+  end
+
+  def list_labels
+    @labels.each_with_index do |label, ind|
+      p "#{ind + 1} title: #{label.title} color: #{label.color}"
+    end
+  end
+
   def dispaly_options
     options = %w[
       add_book
@@ -123,6 +167,13 @@ class Interface
       add_movie
       add_album
       list_books
+      list_games
+      list_movies
+      list_albums
+      list_genres
+      list_authors
+      list_sources
+      list_labels
       exit
     ]
 
@@ -141,12 +192,20 @@ class Interface
     return add_movie if choice == 3
     return add_music_album if choice == 4
     return list_books if choice == 5
-    return leave if choice == 6
+    return list_games if choice == 6
+    return list_movies if choice == 7
+    return list_albums if choice == 8
+    return list_genres if choice == 9
+    return list_authors if choice == 10
+    return list_sources if choice == 11
+    return list_labels if choice == 12
+    return leave if choice == 13
 
     p 'Invalid choice'
   end
 
   def final
+    retrieve_data(self)
     while @exit == false
       dispaly_options
       execute(gets.chomp.to_i)

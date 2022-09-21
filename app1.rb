@@ -7,6 +7,7 @@ require './genre'
 require './source'
 require './label'
 require './data1'
+require './retrieve_data'
 
 # rubocop: disable Metrics/ClassLength
 class Interface

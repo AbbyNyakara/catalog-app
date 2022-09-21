@@ -88,7 +88,7 @@ class Interface
     source = gets.chomp
     puts "Movie created successfully\n \n"
 
-    movies << Movie.new(publish_date, silet)
+    movies << Movie.new(publish_date, silent)
     genres << Genre.new(genre)
     sources << Source.new(source)
   end

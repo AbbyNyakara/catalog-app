@@ -10,7 +10,6 @@ class MusicAlbum < Item
 
   def to_json(*_args)
     "{
-      \"id\": \"#{id}\",
       \"on_spotify\": \"#{on_spotify}\",
       \"publish_date\": \"#{publish_date}\"
     }"

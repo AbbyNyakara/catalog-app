@@ -12,7 +12,6 @@ class Game < Item
 
   def to_json(*_args)
     "{
-      \"id\": \"#{id}\",
       \"multiplayer\": \"#{multiplayer}\",
       \"last_played_at\": \"#{last_played_at}\",
       \"publish_date\": \"#{publish_date}\"

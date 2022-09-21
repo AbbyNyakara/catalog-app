@@ -10,7 +10,6 @@ class Movie < Item
 
   def to_json(*_args)
     "{
-      \"id\": \"#{id}\",
       \"publish_date\": \"#{publish_date}\",
       \"silent\": \"#{silent}\"
     }"

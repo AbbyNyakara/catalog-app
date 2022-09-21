@@ -1,7 +1,7 @@
 require 'securerandom'
 require './item'
 
-class Genre < Item
+class Genre
   attr_accessor :id, :name, :items
 
   def initialize(name)

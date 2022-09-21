@@ -10,11 +10,11 @@ class Game < Item
     @last_played_at = last_played_at
   end
 
+  private
   def can_be_archived?
     return true if super() && Date.strptime(@last_played_at, '%Y-%m-%d') < DateTime.now.prev_year(2)
 
     false
   end
 
-  private :can_be_archived?
 end

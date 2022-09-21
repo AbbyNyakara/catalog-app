@@ -10,7 +10,7 @@ require './data1'
 require './retrieve_data'
 
 # rubocop: disable Metrics/ClassLength
-class Interface
+class App
   attr_accessor :genres, :sources, :labels, :authors, :books, :movies,
                 :music_albums, :games
 
@@ -212,6 +212,3 @@ class Interface
 end
 
 # rubocop: enable Metrics/ClassLength
-
-mimi = Interface.new
-mimi.final

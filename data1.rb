@@ -32,8 +32,6 @@ def save_source(source)
   JSON.dump(source, File.open('./storage/source.json', 'w+'))
 end
 
-
-
 def save_data(item)
   save_book(item.books)
   save_movie(item.movies)
@@ -44,5 +42,3 @@ def save_data(item)
   save_labels(item.labels)
   save_source(item.sources)
 end
-
-

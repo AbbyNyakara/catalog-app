@@ -1,5 +1,5 @@
 require 'securerandom'
-require 'items'
+require 'item'
 
 class Label
   attr_accessor :items, :color, :title

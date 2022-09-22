@@ -2,7 +2,7 @@ require_relative '../author'
 
 describe Author do
   before :each do
-    @author = Author.new('Abby', 'Nyakara', '2022/02/02')
+    @author = Author.new('Abby', 'Nyakara')
   end
 
   context 'When Testing the Author Class' do
@@ -18,7 +18,6 @@ describe Author do
     it 'Should return first name, last name and the date' do
       expect(@author.first_name).to eq 'Abby'
       expect(@author.last_name).to eq 'Nyakara'
-      expect(@author.publish_date).to eq '2022/02/02'
     end
   end
 end

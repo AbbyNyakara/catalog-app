@@ -8,6 +8,15 @@ class MusicAlbum < Item
     @on_spotify = on_spotify
   end
 
+  def to_json(*_args)
+    "{
+      \"on_spotify\": \"#{on_spotify}\",
+      \"publish_date\": \"#{publish_date}\"
+    }"
+  end
+
+  # private
+
   def can_be_archived?()
     parent = super()
     return true if parent || @on_spotify

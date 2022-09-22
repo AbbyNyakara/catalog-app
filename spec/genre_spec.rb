@@ -2,7 +2,7 @@ require_relative '../genre'
 
 describe Genre do
   before :each do
-    @genre = Genre.new('Fiction Series', '2010-01-15')
+    @genre = Genre.new('Fiction Series')
   end
 
   context 'When testing the Genre class' do

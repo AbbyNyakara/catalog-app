@@ -1,14 +1,19 @@
 require 'securerandom'
-require './item'
 
-class Genre < Item
+class Genre
   attr_accessor :id, :name, :items
 
-  def initialize(name, publish_date)
-    super(publish_date)
+  def initialize(name)
     @id = SecureRandom.hex(5)
     @name = name
     @items = []
+  end
+
+  def to_json(*_args)
+    "{
+      \"id\": \"#{id}\",
+      \"name\": \"#{name}\"
+    }"
   end
 
   def add_items(item)

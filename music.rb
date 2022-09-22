@@ -15,7 +15,7 @@ class MusicAlbum < Item
     }"
   end
 
-  private
+  # private
 
   def can_be_archived?()
     parent = super()

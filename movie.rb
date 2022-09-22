@@ -22,5 +22,5 @@ class Movie < Item
     false
   end
 
-  private :can_be_archived?
+  # private :can_be_archived?
 end

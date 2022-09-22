@@ -17,7 +17,7 @@ class Book < Item
     }"
   end
 
-  private
+  # private
 
   def can_be_archived?
     if @cover_state == 'bad' || super

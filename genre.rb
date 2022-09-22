@@ -18,6 +18,6 @@ class Genre
 
   def add_items(item)
     @items << item
-    item.genre = self
+    # item.genre = self
   end
 end

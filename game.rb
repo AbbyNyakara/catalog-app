@@ -18,7 +18,7 @@ class Game < Item
     }"
   end
 
-  private
+  # private
 
   def can_be_archived?
     return true if super() && Date.strptime(@last_played_at, '%Y-%m-%d') < DateTime.now.prev_year(2)

@@ -14,8 +14,6 @@ def retrieve_movies(movies)
   data.each do |movie|
     movies << Movie.new(movie['publish_date'], movie['silent'])
   end
-rescue Errno::ENOENT
-  puts 'No movie yet!'
 end
 
 def retrieve_albums(music_albums)
@@ -23,8 +21,6 @@ def retrieve_albums(music_albums)
   data.each do |album|
     music_albums << MusicAlbum.new(album['on_spotify'], album['publish_date'])
   end
-  # rescue Errno::ENOENT
-  # puts 'No music album yet!'
 end
 
 def retrieve_games(games)
@@ -32,8 +28,6 @@ def retrieve_games(games)
   data.each do |game|
     games << Game.new(game['multiplayer'], game['last_played_at'], game['publish_date'])
   end
-rescue Errno::ENOENT
-  puts 'No game yet!'
 end
 
 def retrieve_genres(genres)
@@ -41,8 +35,6 @@ def retrieve_genres(genres)
   data.each do |genre|
     genres << Genre.new(genre['name'])
   end
-rescue Errno::ENOENT
-  puts 'No genre yet!'
 end
 
 def retrieve_authors(authors)
@@ -50,8 +42,6 @@ def retrieve_authors(authors)
   data.each do |author|
     authors << Author.new(author['first_name'], author['last_name'])
   end
-rescue Errno::ENOENT
-  puts 'No author yet!'
 end
 
 def retrieve_sources(sources)
@@ -59,8 +49,6 @@ def retrieve_sources(sources)
   data.each do |source|
     sources << Source.new(source['name'])
   end
-rescue Errno::ENOENT
-  puts 'No sources yet!'
 end
 
 def retrieve_labels(labels)
@@ -68,8 +56,6 @@ def retrieve_labels(labels)
   data.each do |label|
     labels << Label.new(label['title'], label['color'])
   end
-rescue Errno::ENOENT
-  puts 'No sources yet!'
 end
 
 def retrieve_data(item)

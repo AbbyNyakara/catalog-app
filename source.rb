@@ -1,12 +1,10 @@
 require 'securerandom'
-require_relative './item'
 
-class Source < Item
+class Source
   attr_accessor :name
   attr_reader :id
 
-  def initialize(name, publish_date)
-    super(publish_date)
+  def initialize(name)
     @id = SecureRandom.hex(5)
     @name = name
     @items = []

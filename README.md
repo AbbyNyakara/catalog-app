@@ -1,7 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
-CATALOG APP
+# CATALOG APP
 
 > A console app that helps one to keep track of the own things they own such as movie, music albums, games, books
 

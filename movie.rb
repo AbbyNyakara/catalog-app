@@ -8,6 +8,13 @@ class Movie < Item
     @silent = silent
   end
 
+  def to_json(*_args)
+    "{
+      \"publish_date\": \"#{publish_date}\",
+      \"silent\": \"#{silent}\"
+    }"
+  end
+
   def can_be_archived?
     parent = super()
     return true if parent || @silent

@@ -3,48 +3,38 @@
 # Project Name
 CATALOG APP
 
-> Description the project.
-A console app that helps one to keep track of the own things they own such as movie, music albums, games, books
+> A console app that helps one to keep track of the own things they own such as movie, music albums, games, books
 
 
 ## Built With
 
 - Ruby
 - RSpec
-- Technologies used
 
-## Live Demo (if available)
-
-[Live Demo Link](https://livedemo.com)
 
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
-Basic knowlwedge of computers, git and an editor most prefarably visual studio code
+Basic knowlwedge of computers, git and an editor most prefarably visual studio code.
+- Ruby
+- RSpec
+- PostgreSQL
 
 ### Setup
-Navigate to the directory in your local computer where you want this project to be.
-Once inside open the terminal in that directory and clone the project
-Run git clone(https://github.com/AbbyNyakara/catalog-app.git)
+- Navigate to the directory in your local computer where you want this project to be.
+- Once inside open the terminal in that directory and clone the project using the command `git clone https://github.com/AbbyNyakara/catalog-app.git`
 
 ### Install
-When the clone is complete change the current working directory to the catalog app
-Run cd catalog-app
-Then open it VsCode by running ==> code .
-### Usage
-
+- When the clone is complete change the current working directory to the catalog app with the command `cd catalog-app`
+- Then open it VsCode by running ==> code .
 ### Run tests
+- Run `rspec spec` to run the tests.
 
-### Deployment
-Once you create the file for the tests with the _spec.rb extension, jusr run rspec to run the tests
-
+## About the app
+[Video description](https://drive.google.com/file/d/17jZ5QaEB6ayhU6AnJiqnCwOQBPgcdV0f/view)
 
 ## Authors
 
@@ -76,17 +66,11 @@ Once you create the file for the tests with the _spec.rb extension, jusr run rsp
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/AbbyNyakara/catalog-app/issues).
 
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
 
 ## 📝 License
 
